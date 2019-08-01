@@ -166,11 +166,8 @@ class Transfer extends Component {
         sIdx = index
       }
     })
-    if (sIdx < tIdx) {
-      _targetList.splice(sIdx, 1)
-    } else {
-      _targetList.splice(sIdx + 1, 1)
-    }
+    const delPosition = sIdx < tIdx ? sIdx : sIdx + 1
+    _targetList.splice(delPosition, 1)
     this.setState({ targetList: _targetList })
   }
   setTargetNode (id, dividerPosition) {
