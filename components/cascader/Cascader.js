@@ -178,6 +178,7 @@ class Cascader extends Component {
       data,
       filterOption: filterFunc
     } = this.props
+    console.log(this.props)
     const {
       keyword
     } = this.state
@@ -197,6 +198,7 @@ class Cascader extends Component {
         let label = option[labelKey]
         const value = option[valueKey]
         const children = option[childrenKey]
+
         if ((filterFunc && filterFunc(keyword, option)) || label.toString().includes(keyword) || value.toString().includes(keyword)) {
           match.matchCount++
         }
@@ -221,7 +223,7 @@ class Cascader extends Component {
     }
     checkOptions(data, initMatchOptions)
     filterOptions = this.formatFilterOptions(filterOptions, keyword)
-
+    console.log('filterOptions', filterOptions)
     this.setState({
       filterOptions
     })
